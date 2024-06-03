@@ -24,3 +24,8 @@ SELECT *
 FROM fatture
 INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
 WHERE fatture.importo_fattura < 1000
+
+Esercizio 6
+SELECT numero_fattura,importo_fattura,iva_fattura,data_fattura,nome_cliente
+FROM fatture
+INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
