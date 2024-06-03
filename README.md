@@ -9,9 +9,9 @@ FROM clienti
 WHERE anno_nascita_cliente = 1982
 
 Esercizio 3
-SELECT numero_fattura
+SELECT iva_fattura, COUNT(*)
 FROM fatture
-WHERE iva_fattura = 20
+WHERE iva_fattura = 20 GROUP BY iva_fattura
 
 Esercizio 4
 SELECT *
@@ -22,10 +22,10 @@ AND (inproduzione_prodotto = TRUE OR incommercio_prodotto = TRUE)
 Esercizio 5
 SELECT *
 FROM fatture
-INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
+JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
 WHERE fatture.importo_fattura < 1000
 
 Esercizio 6
 SELECT numero_fattura,importo_fattura,iva_fattura,data_fattura,nome_cliente
 FROM fatture
-INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
+JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
