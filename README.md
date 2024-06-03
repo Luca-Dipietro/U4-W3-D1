@@ -1,26 +1,26 @@
 Esercizio 1
 SELECT *
-FROM public."Clienti"
+FROM clienti
 WHERE nome_cliente='Mario'
 
 Esercizio 2
 SELECT nome_cliente,cognome_cliente
-FROM public."Clienti"
+FROM clienti
 WHERE anno_nascita_cliente = 1982
 
 Esercizio 3
 SELECT numero_fattura
-FROM public."Fatture"
+FROM fatture
 WHERE iva_fattura = 20
 
 Esercizio 4
 SELECT *
-FROM public."Prodotti"
+FROM prodotti
 WHERE EXTRACT(YEAR FROM data_attivazione_prodotto)= 2017
 AND (inproduzione_prodotto = TRUE OR incommercio_prodotto = TRUE)
 
 Esercizio 5
 SELECT *
-FROM public."Fatture"
-INNER JOIN public."Clienti" ON public."Fatture".id_cliente = public."Clienti".numero_cliente
-WHERE public."Fatture".importo_fattura < 1000
+FROM fatture
+INNER JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
+WHERE fatture.importo_fattura < 1000
