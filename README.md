@@ -33,3 +33,7 @@ JOIN clienti ON fatture.id_cliente = clienti.numero_cliente
 Esercizio 7
 SELECT EXTRACT (YEAR FROM data_fattura) , COUNT(*) 
 FROM fatture where iva_fattura = 20 GROUP BY data_fattura
+
+Esercizio 8
+SELECT COUNT(*), EXTRACT(YEAR FROM data_fattura), SUM(importo_fattura)
+FROM fatture GROUP BY data_fattura
